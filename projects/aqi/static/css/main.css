@@ -1,0 +1,341 @@
+a, body, dd, div, dl, dt, h1, h2, h3, h4, h5, img, input, li, p, td, ul { list-style: none; margin: 0; padding: 0; border: 0; outline: 0; font: inherit; vertical-align: baseline; }
+input[type=password], input[type=text] { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+input, select, textarea { resize: none; outline: 0; font: inherit; }
+body { cursor: default; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; font-size: 14px; height: 0; color: #333; font-family: neer, Helvetica, Arial, sans-serif; background-color: #E4E4E1; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*Clear*/
+.CLR:after { content: ''; display: block; clear: both; }
+
+/*HIDE*/
+._hide{  display: none;}
+
+/*Header*/
+.header {     background: #3e50b4;  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.76);  padding: 9px 0;  z-index: 500;  position: absolute;  left: 0;  right: 0;  top: 0;}
+.top_bar {  height: 15px; margin-top: 10px;    padding-left: 155px;  color: #fff; }
+
+
+#map {
+  height: 100%;
+}
+
+
+.location_bar{    margin-left: 260px;
+    margin-top: -30px;}
+.controls {
+margin-top: 10px;
+border: 1px solid transparent;
+border-radius: 2px 0 0 2px;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+height: 32px;
+outline: none;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#origin-input,
+#destination-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+#origin-input:focus,
+#destination-input:focus {
+  border-color: #4d90fe;
+}
+
+#mode-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  margin-left: 12px;
+  padding: 5px 11px 0px 11px;
+}
+
+#mode-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+
+/*Transitions*/
+.marker,.f_sort ul,a,article > div:last-child > span, .panes-container { -webkit-transition: all .1s ease-out; -moz-transition: all .1s ease-out; -o-transition: all .1s ease-out; transition: all .1s ease-out; }
+
+/*icons
+.marker > div:before,article > div:last-child > span:after,.in_sr:after,.sr_ext > div > div > span:before,article > div:last-child > a:before,article > p:before{ height: 14px; width: 14px; background-image: url(../img/ico.png); background-repeat: no-repeat; display: inline-block; }
+*/
+.marker{cursor: pointer;margin: -34px 0px 0px -16px;  position: absolute;  border-radius: 3px;  text-align: center;  font-size: 10px;  color: #fff;  text-shadow: 0 1px#000;  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.32);  border: 1px solid rgba(0, 0, 0, 0.39);  width: 30px;}
+.marker:after,.marker:before{content: '';  border: 7px solid;  position: absolute;  height: 0;  width: 0;  top: 25px;  left: 8px;}
+.marker:after{top: 24px;}
+.marker:hover{z-index:500;    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.64);}
+.marker.level9:after{border-color: #cb202d transparent transparent transparent;}
+.marker.level8:after{border-color: #ff7800 transparent transparent transparent;}
+
+.marker.levelna:after{border-color: #999 transparent transparent transparent;}
+.marker.levelna > span{background-color:#999}
+
+.marker.level6:after{border-color: #7e0023 transparent transparent transparent;}
+.marker.level6 > span{background-color:#7e0023}
+
+.marker.level5:after{border-color: #660099 transparent transparent transparent;}
+.marker.level5 > span{background-color:#660099}
+
+.marker.level4:after{border-color: #cc0033 transparent transparent transparent;}
+.marker.level4 > span{background-color:#cc0033}
+
+.marker.level3:after{border-color: #ff9933 transparent transparent transparent;}
+.marker.level3 > span{background-color:#ff9933;}
+
+.marker.level2:after{border-color: #ffde33 transparent transparent transparent;}
+.marker.level2 > span{background-color:#ffde33;}
+
+.marker.level1:after{border-color: #009966 transparent transparent transparent;}
+.marker.level1 > span{background-color:#009966;}
+
+.marker.level0:after{border-color: #00aeff transparent transparent transparent;}
+.marker.level0 > span{background-color:#00aeff;}
+
+.marker:hover span:before {    background: rgba(0, 0, 0, 0.44);}
+
+
+.marker:before{    border-color: rgba(0, 0, 0, 0.52) transparent transparent transparent;}
+.marker > span{line-height: 25px;  position: relative;display: block;border-radius:2px;background-color: #305d02;}
+
+.marker > span:before{    content: '';  display: block;  position: absolute;  height: 4px;  width: 4px;  background: rgba(0, 0, 0, 0.2);  border-radius: 50%;  left: 12px;  top: 30px;  border: 1px solid rgb(255, 255, 255);  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.25);  z-index: -1;}
+.marker > div{       padding: 1px 0; background: rgba(0, 0, 0, 0.56);  height: 17px;  width: 36px;  border-radius: 2px 2px 0 0;}
+.marker > div:before{content: '';  height: 17px;  width: 20px;}
+.marker.t_sc > div:before{    background-position: -239px -76px;}
+.marker.t_cl > div:before{    background-position: -241px -58px;}
+.marker.t_ic > div:before{    background-position: -240px -98px;}
+.marker.t_sc{}
+.marker.t_cl{}
+.marker.t_ic{}
+
+
+.sr_res.marker_hover{
+    display: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: 132px;
+    left: 105px;
+    background: #fff;
+    padding: 8px 15px;
+    width: 250px;
+    border-radius: 2px;
+}
+
+.sr_res.marker_hover ol .label {
+	font-weight: bold;
+}
+.sr_res.marker_hover ol{
+    text-align: left;
+    padding: 0;
+    margin: 0 0 6px;
+    }
+
+.sr_res.marker_hover div{font-size:13px;}
+
+ .ads_details {
+  margin-left:2%;
+  float:left;
+  height:40px;
+  width:40px;
+}
+
+
+.product {
+ vertical-align: top;
+    margin: 0px 0px 5px 0px;
+    width: 100px;
+    height: 79px;
+    text-overflow: ellipsis;
+    color: #333;
+    background-color: #efefef;
+    border-radius: 3px;
+    padding: 8px;
+}
+.link{    text-decoration: none;
+    float: left;
+    margin-right: 4px;}
+.product div.title {
+       font-size: 13px;
+    margin-top: 5px;
+}
+
+.product-panel a {
+    color: black;
+    cursor: pointer;
+}
+
+
+.panes-container {
+  padding: 55px 14px 10px 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.42);
+  position: absolute;
+  top: 0;
+  right: -275px;
+  bottom: 0;
+  width: 250px;
+}
+.panes-container.expanded {
+  right:0;
+}
+
+.right-pane {
+  padding-top: 50px;
+  background: white;
+}
+.panel_btn{
+    position: absolute;
+    left: -46px;
+    top: 60px;
+    width: 31px;
+    background-color: #fff;
+    border-radius: 3px 0 0 3px;
+    box-shadow: -3px 0 3px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    line-height: 23px;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.expanded .panel_btn{
+left: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.ads {
+    box-shadow: 0px 0px 3px rgba(0,0,0,.20);
+    background: #fff;
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+    height: 80px;
+    background: #f8f8f8;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.small-img {
+  width: 40px;
+  height: 40px;
+}
+
+
+.health-icon {
+  background: url(../images/health.jpeg);
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: bottom;
+}
+
+
+.air-icon {
+  background: url(../images/air.png);
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: bottom;
+}
+
+
+.close-icon {
+	background: url(../images/close.png);
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background-size: cover;
+    float: right;
+}
+
+
+.ads-anchor {
+	color: #15c !important;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.ads div {
+	text-align: center;
+}
+
+.ads-anchor.center {
+	margin: 20px;
+}
+
+.ads-container {
+	padding-top: 10px;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+.rect {
+      width: 20px;
+    height: 20px;
+    margin-left: 1px;
+}
+  
+.green {
+  background-color: green;
+}
+
+.moderate {
+  background-color:#ffde33
+}
+
+.unhealthy {
+  background-color:#f93
+}
+
+.very-unhealthy {
+  background-color:#c03;
+}
+.very-sensitive {
+  background-color:#609;
+}
+.hazardous {
+  background-color:#7e0023;
+}
+
+.warnings {
+   padding-top: 10px;
+    text-overflow: ellipsis;
+}
+.ads-container.levelna,
+.ads-container.level1{
+	display: none;
+}
+
+.distance-icon {
+  background: url(../images/distance.png) no-repeat;
+  width: 20px;
+  display: inline-block;
+  background-size: contain;
+  vertical-align: bottom;
+  height: 20px;
+  padding-right: 1px;
+}

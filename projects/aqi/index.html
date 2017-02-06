@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <title>PROJECT - AQI</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="user-scalable=no, width=device-width, minimum-scale=1, maximum-scale=1"/>
+  <meta http-equiv="cleartype" content="on"/>
+  <!--<link rel="shortcut icon" href="{{ STATIC_URL }}img/favico.png">-->
+
+  <link href="static/css/main.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+
+<header class="header">
+  <div class="box">
+    <div class="top_bar CLR">
+      <a href="/"><img src="static/images/logo.png"/></a>
+    </div>
+
+    <div class="location_bar">
+    <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+    <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
+    </div>
+
+  </div>
+</header>
+
+<div style="position:absolute; top:55px; left:0px; right:0px; bottom:0px;">
+    <div id="map" class="google_map"></div>
+</div>
+
+<div class="panes-container" id="pane-container">
+ <a class="panel_btn" id="right-pane-btn">&larr;</a>
+  <div class="right-pane" id="right-pane">
+            <div>
+                  <p style="font-size: 14px;
+    font-weight: bold;
+    padding: 15px 0px 7px 0;">Select Vehicle Type:</p>
+          <select class="vehicle_type">
+              <option value="" selected>-- Select here --</option>
+              <option value="suv" >SUV (190 - 210mm)</option>
+              <option value="sedan">Sedan (170 - 180mm)</option>
+              <option value="bike">Two Wheele</option>
+          </select>
+      </div>
+    <div>
+    <div class="warnings">
+        <p style="font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 8px;">Legend</p>
+      <div>
+       <div class='rect green inline'></div>
+       <div class='inline'>0-50</div>
+       <div class='inline'><p>Good</p></div>
+      </div>
+      <div>
+       <div class='rect moderate inline'></div>
+       <div class='inline'>51-100</div>
+       <div class='inline'><p>Moderate</p></div>
+      </div>
+      <div>
+       <div class='rect unhealthy inline'></div>
+       <div class='inline'>101-200</div>
+       <div class='inline'><p>Unhealthy</p></div>
+      </div>
+      <div>
+       <div class='rect very-unhealthy inline'></div>
+       <div class='inline'>201-300</div>
+       <div class='inline'><p>Very Unhealthy</p></div>
+      </div>
+      <div>
+       <div class='rect very-sensitive inline'></div>
+       <div class='inline'>300-400</div>
+       <div class='inline'><p>Very sensitive</p></div>
+      </div>
+      <div>
+       <div class='rect hazardous inline'></div>
+       <div class='inline'>beyond 400</div>
+       <div class='inline'><p>Hazardous</p></div>
+      </div>
+    </div>
+        <p style="font-size: 14px;
+    font-weight: bold;
+    padding: 15px 0px 7px 0;">Suggested Products</p>
+      <a class="link" href="/products/">
+      <div class="product">
+         <div class="image"><img src="static/images/air-purifiers-small.png"></div>
+          <div class="title">Home Air Purifiers</div>
+      </div></a>
+      <a class="link" href="/mask/">
+      <div class="product">
+        <div class="image"><img src="static/images/respirators-small.png"></div>
+          <div class="title">Protection Masks &amp; Respirators</div>
+      </div>
+      </a>
+      <a class="link" href="/sensor/">
+        <div class="product">
+          <div class="image"><img src="static/images/personal-air-quality-monitors-small.png"></div>
+            <div class="title">Personal Air Quality Monitors</div>
+        </div>
+      </a>
+      <a class="link" href="/sensor/">
+        <div class="product">
+          <div class="image"><img src="static/images/sensors-small.png"></div>
+            <div class="title">Air Sensor</div>
+        </div>
+       </a>
+       <a class="link" href="/monitoring-stattions/">
+        <div class="product">
+          <div class="image"><img src="static/images/aqms-small.png"></div>
+            <div class="title">AQ Monitoring stations</div>
+        </div>
+       </a>
+      </div>
+  </div>
+
+    <p style="position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #aaa;
+    padding-top: 4px;"
+    >© AQI TEAM</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="static/js/maps.js"></script>
+<!--key=AIzaSyAaheTb-XcvqrDZtHQ6OOnNtwsw5c3iVOc-->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaheTb-XcvqrDZtHQ6OOnNtwsw5c3iVOc&libraries=places,geometry">
+</script>
+<script src="static/js/routeboxer.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    AQI.init();
+  });
+</script>
+
+</body>
+</html>
